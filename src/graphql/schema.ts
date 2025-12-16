@@ -1,5 +1,11 @@
 import { gql } from "apollo-server";
 
+// El schema define:
+// - Tipos
+// - Queries
+// - Mutations
+//
+// IMPORTANTE: resolvers TIENE que respetar estos nombres y tipos.
 export const typeDefs = gql`
 
     type User {
@@ -23,9 +29,9 @@ export const typeDefs = gql`
     }
 
     type Mutation {
-        addClothing(name: String!, size: String!, color: String!, price: Float!): Clothing!
-        buyClothing(clothingId: ID!): User!
         register(email: String!, password: String!): String!
         login(email: String!, password: String!): String!
+        addClothing(name: String!, size: String!, color: String!, price: Float!): Clothing!
+        buyClothing(clothingId: ID!): User!
     }
 `
